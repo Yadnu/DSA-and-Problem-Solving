@@ -13,6 +13,16 @@ void display(struct Array &YJ){
 	}
 	cout<<"\n";
 }
+void insertAtIndex(struct Array &YJ,int index,int a){
+    if(index>=0 && YJ.length>=index ){
+        for(int i=YJ.length;i>index;i--){
+            YJ.A[i]=YJ.A[i-1];
+        }
+        YJ.A[index]=a;
+        YJ.length;
+    }
+}
+
 void createArr(struct Array &YJ){
 	cout<<"Enter Size of Array \n";
 	cin>>YJ.size;
@@ -36,6 +46,10 @@ int main(int argc, char const *argv[])
 	createArr(YJ);
 	// entry(YJ);
 	append(YJ,15);
-	display(YJ);
+
+
+    insertAtIndex(YJ,2,12);
+    	display(YJ);
+    	cout<<"\n"<<YJ.length;
 	return 0;
 }
